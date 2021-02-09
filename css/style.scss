@@ -31,29 +31,33 @@ ul {
           header  
 --------------------------*/
 header {
+  position: fixed;
+  margin: 0;
   height: 620px;
+  width: 100vw;
   background-image: url("../img/header.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 
   .header-top {
-    position: absolute;
-    top: 40px;
-    left: 12.5vh;
-    width: 75vw;
+    //position: absolute;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
     height: 64px;
+    display: flex;
     justify-content: space-between;
     font: 36px/50px Myriad Pro;
     color: #FFFFFF;
 
     /*　ハンバーガーボタン　*/
     .hamburger {
-      display: block;
-      position: fixed;
-      z-index: 3;
+      //display: flex;
+      // position: fixed;
+       z-index: 3;
       right: 160px;
-      top: 40px;
       width: 42px;
       height: 42px;
       cursor: pointer;
@@ -62,7 +66,7 @@ header {
 
     .hamburger span {
       display: block;
-      position: absolute;
+      position: relative;
       width: 30px;
       height: 1px;
       left: 6px;
