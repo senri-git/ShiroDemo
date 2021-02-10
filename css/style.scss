@@ -16,6 +16,7 @@ body {
     Hiragino Kaku Gothic Pro, Meiryo UI, "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
     MS PGothic, sans-serif;
   font-size: 16px;
+
 }
 
 a {
@@ -31,20 +32,19 @@ ul {
           header  
 --------------------------*/
 header {
-  position: fixed;
   margin: 0;
   height: 620px;
-  width: 100vw;
+  width: 100%;
   background-image: url("../img/header.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  display: flex;
+  justify-content: center;
 
   .header-top {
-    //position: absolute;
+    position: fixed;
     margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
     width: 960px;
     height: 64px;
     display: flex;
@@ -158,25 +158,15 @@ header {
   .title {
     position: absolute;
     top: 240px;
-    left: 12.5vh;
-    width: 75vw;
     height: 120px;
-    text-align: center;
     font: 100px/100px Myriad Pro;
     color: #FFFFFF;
-
-
-
-
   }
 
   .sub-title {
     position: absolute;
-    left: 12.5vh;
-    width: 75vw;
     top: 360px;
     height: 16px;
-    text-align: center;
     font: 16px/16px Hiragino Kaku Gothic ProN;
     color: #FFFFFF;
 
@@ -191,5 +181,56 @@ header {
       color: #FFFFFF;
 
     }
+  }
+}
+
+main {
+  position: absolute;
+  top: 700px;
+  right: 0;
+  width: 100%;
+/*--------------------------
+          Concept  
+--------------------------*/
+  .concept {
+    width: 100%;
+    height: 720px;
+
+    .container{
+      margin: 0 auto;
+      width: 960px;
+      text-align: center;
+      h1{
+        font: bold 36px/55px Poppins;
+      }
+      .partition{
+        display: inline-block;
+        height: 24px;
+        width: 40px;
+        border-bottom: 1px solid #333333;
+      }
+      p{
+        margin: 32px 192px 40px 192px;
+        width: 576px;
+        font: 16px/22px Myriad Pro;
+        letter-spacing: 0px;
+        color: #2B2B2B;
+      }
+      img{
+        position: relative;
+        z-index: 2;
+      }
+    }
+    .band{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      height: 240px;
+      width: 100%;
+      background-color: #EDEDED;
+
+    }
+
   }
 }

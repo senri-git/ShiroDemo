@@ -28,20 +28,24 @@ ul {
           header  
 --------------------------*/
 header {
-  position: fixed;
   margin: 0;
   height: 620px;
-  width: 100vw;
+  width: 100%;
   background-image: url("../img/header.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 header .header-top {
+  position: fixed;
   margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
   width: 960px;
   height: 64px;
   display: -webkit-box;
@@ -156,21 +160,15 @@ header .header-top nav.globalMenuSp.active {
 header .title {
   position: absolute;
   top: 240px;
-  left: 12.5vh;
-  width: 75vw;
   height: 120px;
-  text-align: center;
   font: 100px/100px Myriad Pro;
   color: #FFFFFF;
 }
 
 header .sub-title {
   position: absolute;
-  left: 12.5vh;
-  width: 75vw;
   top: 360px;
   height: 16px;
-  text-align: center;
   font: 16px/16px Hiragino Kaku Gothic ProN;
   color: #FFFFFF;
 }
@@ -183,5 +181,60 @@ header .sub-title::before {
 header .sub-title::after {
   content: "-";
   color: #FFFFFF;
+}
+
+main {
+  position: absolute;
+  top: 700px;
+  right: 0;
+  width: 100%;
+  /*--------------------------
+          Concept  
+--------------------------*/
+}
+
+main .concept {
+  width: 100%;
+  height: 720px;
+}
+
+main .concept .container {
+  margin: 0 auto;
+  width: 960px;
+  text-align: center;
+}
+
+main .concept .container h1 {
+  font: bold 36px/55px Poppins;
+}
+
+main .concept .container .partition {
+  display: inline-block;
+  height: 24px;
+  width: 40px;
+  border-bottom: 1px solid #333333;
+}
+
+main .concept .container p {
+  margin: 32px 192px 40px 192px;
+  width: 576px;
+  font: 16px/22px Myriad Pro;
+  letter-spacing: 0px;
+  color: #2B2B2B;
+}
+
+main .concept .container img {
+  position: relative;
+  z-index: 2;
+}
+
+main .concept .band {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 240px;
+  width: 100%;
+  background-color: #EDEDED;
 }
 /*# sourceMappingURL=style.css.map */
