@@ -194,6 +194,29 @@ main {
   /*--------------------------
           Work  
 --------------------------*/
+  /*--------------------------
+          Florist  
+--------------------------*/
+}
+
+main h1 {
+  margin-top: 80px;
+  font: bold 36px/55px Poppins;
+}
+
+main .partition {
+  display: inline-block;
+  height: 24px;
+  width: 40px;
+  border-bottom: 1px solid #707070;
+}
+
+main p {
+  margin: 32px auto 40px;
+  width: 100%;
+  font: 16px/26px Myriad Pro;
+  letter-spacing: 0px;
+  color: #2B2B2B;
 }
 
 main .concept {
@@ -208,26 +231,6 @@ main .concept .container {
   margin: 0 auto;
   width: 960px;
   text-align: center;
-}
-
-main .concept .container h1 {
-  margin-top: 80px;
-  font: bold 36px/55px Poppins;
-}
-
-main .concept .container .partition {
-  display: inline-block;
-  height: 24px;
-  width: 40px;
-  border-bottom: 1px solid #707070;
-}
-
-main .concept .container p {
-  margin: 32px 192px 40px 192px;
-  width: 576px;
-  font: 16px/26px Myriad Pro;
-  letter-spacing: 0px;
-  color: #2B2B2B;
 }
 
 main .concept .container img {
@@ -258,26 +261,6 @@ main .work .container {
   width: 960px;
 }
 
-main .work .container h1 {
-  margin-top: 80px;
-  font: bold 36px/55px Poppins;
-}
-
-main .work .container .partition {
-  display: inline-block;
-  height: 24px;
-  width: 40px;
-  border-bottom: 1px solid #707070;
-}
-
-main .work .container p {
-  margin: 32px auto 40px;
-  width: 100%;
-  font: 16px/26px Myriad Pro;
-  letter-spacing: 0px;
-  color: #2B2B2B;
-}
-
 main .work .container .gallery {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -306,5 +289,54 @@ main .work .container .gallery .column-left p, main .work .container .gallery .c
 
 main .work .container .gallery .column-right img:first-of-type {
   margin-top: 120px;
+}
+
+main .florist {
+  position: absolute;
+  top: 2707px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+main .florist .band {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 374px;
+  width: 100%;
+  background-color: #EDEDED;
+}
+
+main .florist .container {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  width: 960px;
+}
+
+main .florist .container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .florist .container ul li {
+  width: 300px;
+  text-align: left;
+}
+
+main .florist .container ul li h2 {
+  margin: 12px auto;
+  font-size: 24px;
+}
+
+main .florist .container ul li p {
+  margin: 0 auto 40px;
+  color: #2B2B2B;
 }
 /*# sourceMappingURL=style.css.map */

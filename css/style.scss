@@ -189,6 +189,23 @@ main {
   top: 620px;
   left: 0;
   width: 100%;
+  h1{
+    margin-top: 80px;
+    font: bold 36px/55px Poppins;
+  }
+  .partition{
+    display: inline-block;
+    height: 24px;
+    width: 40px;
+    border-bottom: 1px solid #707070;
+  }
+  p{
+    margin: 32px auto 40px;
+    width: 100%;
+    font: 16px/26px Myriad Pro;
+    letter-spacing: 0px;
+    color: #2B2B2B;
+  }
 /*--------------------------
           Concept  
 --------------------------*/
@@ -203,23 +220,7 @@ main {
       margin: 0 auto;
       width: 960px;
       text-align: center;
-      h1{
-        margin-top: 80px;
-        font: bold 36px/55px Poppins;
-      }
-      .partition{
-        display: inline-block;
-        height: 24px;
-        width: 40px;
-        border-bottom: 1px solid #707070;
-      }
-      p{
-        margin: 32px 192px 40px 192px;
-        width: 576px;
-        font: 16px/26px Myriad Pro;
-        letter-spacing: 0px;
-        color: #2B2B2B;
-      }
+      
       img{
         position: relative;
         z-index: 1;
@@ -248,23 +249,7 @@ main {
     .container{
       margin: 0 auto;
       width: 960px;
-      h1{
-        margin-top: 80px;
-        font: bold 36px/55px Poppins;
-      }
-      .partition{
-        display: inline-block;
-        height: 24px;
-        width: 40px;
-        border-bottom: 1px solid #707070;
-      }
-      p{
-        margin: 32px auto 40px;
-        width: 100%;
-        font: 16px/26px Myriad Pro;
-        letter-spacing: 0px;
-        color: #2B2B2B;
-      }
+      
       .gallery{
         display: flex;
         justify-content: space-between;
@@ -289,5 +274,48 @@ main {
       }
     }
   }
+/*--------------------------
+          Florist  
+--------------------------*/
+  .florist{
+    position: absolute;
+    top: 2707px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    .band{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      height: 374px;
+      width: 100%;
+      background-color: #EDEDED;
+    }
+    .container{
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+      width: 960px;
+      ul{
+        display: flex;
+        justify-content: space-between;
+        li{
+          width: 300px;
+          text-align: left;
+          h2{
+            margin: 12px auto;
+            font-size: 24px;
+          }
+          p {
+            margin: 0 auto 40px;
+            color: #2B2B2B;
+          }
 
+        }
+
+      }
+
+    }
+  }
 }
