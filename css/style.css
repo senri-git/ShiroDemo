@@ -11,7 +11,7 @@
 
 body {
   color: #333;
-  font-family: Dosis, Helvetica Neue, Helvetica, Arial, Verdana, Roboto, "游ゴシック", Yu Gothic, "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, Meiryo UI, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", MS PGothic, sans-serif;
+  font-family: Myriad Pro, Dosis, Helvetica Neue, Helvetica, Arial, Verdana, Roboto, "游ゴシック", Yu Gothic, "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, Meiryo UI, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", MS PGothic, sans-serif;
   font-size: 16px;
 }
 
@@ -31,7 +31,8 @@ header {
   margin: 0;
   height: 620px;
   width: 100%;
-  background-image: url("../img/header.png");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("../img/header.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/header.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -188,6 +189,9 @@ main {
   top: 620px;
   left: 0;
   width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   /*--------------------------
           Concept  
 --------------------------*/
@@ -196,6 +200,9 @@ main {
 --------------------------*/
   /*--------------------------
           Florist  
+--------------------------*/
+  /*--------------------------
+          Shop Information  
 --------------------------*/
 }
 
@@ -270,17 +277,20 @@ main .work .container .gallery {
           justify-content: space-between;
 }
 
-main .work .container .gallery .column-left, main .work .container .gallery .column-right {
+main .work .container .gallery .column-left,
+main .work .container .gallery .column-right {
   width: 420px;
 }
 
-main .work .container .gallery .column-left h2, main .work .container .gallery .column-right h2 {
+main .work .container .gallery .column-left h2,
+main .work .container .gallery .column-right h2 {
   margin-top: 16px;
   text-align: left;
   font: bold 24px/40px Poppins;
 }
 
-main .work .container .gallery .column-left p, main .work .container .gallery .column-right p {
+main .work .container .gallery .column-left p,
+main .work .container .gallery .column-right p {
   margin: 0px 0 80px;
   text-align: left;
   font: 16px/28px Myriad Pro;
@@ -337,6 +347,124 @@ main .florist .container ul li h2 {
 
 main .florist .container ul li p {
   margin: 0 auto 40px;
+  color: #2B2B2B;
+}
+
+main .shop {
+  position: absolute;
+  top: 3358px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+main .shop .container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+main .shop .container .shop-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .shop .container .shop-wrapper .table-wrapper {
+  width: 432px;
+  height: 320px;
+}
+
+main .shop .container .shop-wrapper .table-wrapper table {
+  line-height: 1.5rem;
+  text-align: left;
+  margin: 20px auto auto 40px;
+  border-collapse: separate;
+  border-spacing: 12px;
+  font-family: Myriad Pro , sans-serif;
+}
+
+main .shop .container .shop-wrapper .table-wrapper table th {
+  height: auto;
+  width: 30%;
+  font-weight: normal;
+  border-right: 2px solid #A0A0A0;
+}
+
+main .shop .container .shop-wrapper .table-wrapper table td {
+  padding-bottom: 16px;
+}
+
+main .contact {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url("../img/contact_us.png");
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/contact_us.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 4044px;
+  left: 0;
+  width: 100%;
+  height: 450px;
+  text-align: center;
+}
+
+main .contact .button {
+  position: relative;
+  width: 360px;
+  height: 80px;
+  margin: 0 auto;
+  padding-left: 30px;
+  background-color: #FFFFFF;
+  border: 1px solid #A0A0A0;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .contact .button::before {
+  content: '';
+  position: absolute;
+  top: 29px;
+  left: 79px;
+  width: 30px;
+  height: 20px;
+  border: 1px solid #707070;
+}
+
+main .contact .button::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 84px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid #707070;
+  border-right: 1px solid #707070;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+/*--------------------------
+          footer 
+--------------------------*/
+footer {
+  position: absolute;
+  z-index: 1;
+  top: 5140px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
   color: #2B2B2B;
 }
 /*# sourceMappingURL=style.css.map */

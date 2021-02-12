@@ -8,15 +8,13 @@
 *::after {
   box-sizing: border-box;
 }
-
 body {
   color: #333;
-  font-family: Dosis, Helvetica Neue, Helvetica, Arial, Verdana, Roboto,
+  font-family: Myriad Pro, Dosis, Helvetica Neue, Helvetica, Arial, Verdana, Roboto,
     "游ゴシック", Yu Gothic, "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3",
     Hiragino Kaku Gothic Pro, Meiryo UI, "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
     MS PGothic, sans-serif;
   font-size: 16px;
-
 }
 
 a {
@@ -35,7 +33,7 @@ header {
   margin: 0;
   height: 620px;
   width: 100%;
-  background-image: url("../img/header.png");
+  background: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url("../img/header.png") ;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -56,7 +54,7 @@ header {
     .hamburger {
       //display: flex;
       // position: fixed;
-       z-index: 3;
+      z-index: 3;
       right: 160px;
       width: 42px;
       height: 42px;
@@ -189,24 +187,28 @@ main {
   top: 620px;
   left: 0;
   width: 100%;
-  h1{
+  flex: 1;
+  h1 {
     margin-top: 80px;
     font: bold 36px/55px Poppins;
   }
-  .partition{
+
+  .partition {
     display: inline-block;
     height: 24px;
     width: 40px;
     border-bottom: 1px solid #707070;
   }
-  p{
+
+  p {
     margin: 32px auto 40px;
     width: 100%;
     font: 16px/26px Myriad Pro;
     letter-spacing: 0px;
     color: #2B2B2B;
   }
-/*--------------------------
+
+  /*--------------------------
           Concept  
 --------------------------*/
   .concept {
@@ -216,17 +218,18 @@ main {
     width: 100%;
     height: 800px;
 
-    .container{
+    .container {
       margin: 0 auto;
       width: 960px;
       text-align: center;
-      
-      img{
+
+      img {
         position: relative;
         z-index: 1;
       }
     }
-    .band{
+
+    .band {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -237,53 +240,61 @@ main {
     }
 
   }
-/*--------------------------
+
+  /*--------------------------
           Work  
 --------------------------*/
-  .work{
+  .work {
     position: absolute;
     top: 800px;
     left: 0;
     width: 100%;
     text-align: center;
-    .container{
+
+    .container {
       margin: 0 auto;
       width: 960px;
-      
-      .gallery{
+
+      .gallery {
         display: flex;
         justify-content: space-between;
-        
-        .column-left,.column-right{
+
+        .column-left,
+        .column-right {
           width: 420px;
-          h2{
+
+          h2 {
             margin-top: 16px;
             text-align: left;
             font: bold 24px/40px Poppins;
           }
-          p{
+
+          p {
             margin: 0px 0 80px;
             text-align: left;
             font: 16px/28px Myriad Pro;
             color: #2B2B2B;
           }
         }
-        .column-right img:first-of-type{
+
+        .column-right img:first-of-type {
           margin-top: 120px;
         }
       }
     }
   }
-/*--------------------------
+
+  /*--------------------------
           Florist  
 --------------------------*/
-  .florist{
+  .florist {
     position: absolute;
     top: 2707px;
     left: 0;
     width: 100%;
     text-align: center;
-    .band{
+
+    .band {
       position: absolute;
       top: 0;
       left: 0;
@@ -292,21 +303,26 @@ main {
       width: 100%;
       background-color: #EDEDED;
     }
-    .container{
+
+    .container {
       position: relative;
       z-index: 1;
       margin: 0 auto;
       width: 960px;
-      ul{
+
+      ul {
         display: flex;
         justify-content: space-between;
-        li{
+
+        li {
           width: 300px;
           text-align: left;
-          h2{
+
+          h2 {
             margin: 12px auto;
             font-size: 24px;
           }
+
           p {
             margin: 0 auto 40px;
             color: #2B2B2B;
@@ -318,4 +334,114 @@ main {
 
     }
   }
+
+  /*--------------------------
+          Shop Information  
+--------------------------*/
+  .shop {
+    position: absolute;
+    top: 3358px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    .container {
+      margin: 0 auto;
+      width: 960px;
+
+      .shop-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .table-wrapper {
+          width: 432px;
+          height: 320px;
+
+          table {
+            line-height: 1.5rem;
+            text-align: left;
+            margin: 20px auto auto 40px;
+            border-collapse: separate;
+            border-spacing: 12px;
+            font-family: Myriad Pro , sans-serif;
+
+            th {
+              height: auto;
+              width: 30%;
+              font-weight: normal;
+              border-right: 2px solid #A0A0A0;
+
+            }
+
+            td {
+              padding-bottom: 16px;
+
+              // margin: 0 auto 16px 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .contact{
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),url("../img/contact_us.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 4044px;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    text-align: center;
+    .button{
+      position:relative;
+      width: 360px;
+      height: 80px;
+      margin: 0 auto;
+      padding-left: 30px;
+      background-color: #FFFFFF;
+      border: 1px solid #A0A0A0;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .button::before{
+      content: '';
+      position:absolute;
+      top: 29px;
+      left: 79px;
+      width: 30px;
+      height: 20px;
+      border: 1px solid #707070;
+    }
+    .button::after{
+      content: '';
+      position:absolute;
+      top: 20px;
+      left: 84px;
+      width: 20px;
+      height: 20px;
+      border-bottom: 1px solid #707070;
+      border-right: 1px solid #707070;
+      transform: rotate(45deg);
+    }
+  }
+}
+  /*--------------------------
+          footer 
+--------------------------*/
+footer{
+  position: absolute;
+  z-index: 1;
+  top: 5140px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: #2B2B2B;
 }
