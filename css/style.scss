@@ -8,6 +8,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 body {
   color: #333;
   font-family: Myriad Pro, Dosis, Helvetica Neue, Helvetica, Arial, Verdana, Roboto,
@@ -33,124 +34,141 @@ header {
   margin: 0;
   height: 620px;
   width: 100%;
-  background: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url("../img/header.png") ;
+  background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url("../img/header.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   display: flex;
   justify-content: center;
 
-  .header-top {
-    position: fixed;
-    margin-top: 40px;
-    width: 960px;
+
+  .top-bar {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
     height: 64px;
+    z-index: 2;
     display: flex;
-    justify-content: space-between;
-    font: 36px/50px Myriad Pro;
-    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
 
-    /*　ハンバーガーボタン　*/
-    .hamburger {
-      //display: flex;
-      // position: fixed;
-      z-index: 3;
-      right: 160px;
-      width: 42px;
-      height: 42px;
-      cursor: pointer;
-      text-align: center;
+    .header-top {
+      width: 960px;
+      display: flex;
+      justify-content: space-between;
+      align-items:center ;
+      font-size: 36px;
+      color: #FFFFFF;
+
+
+      /*　ハンバーガーボタン　*/
+      .hamburger {
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+        text-align: center;
+
+
+        span {
+          display: block;
+          position: relative;
+          width: 30px;
+          height: 1px;
+          left: 6px;
+          background: #FFFFFF;
+          -webkit-transition: 0.3s ease-in-out;
+          -moz-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
+        }
+
+        span:nth-child(1) {
+          top: 10px;
+        }
+
+        span:nth-child(2) {
+          top: 20px;
+        }
+
+        span:nth-child(3) {
+          top: 30px;
+        }
+
+        /* ナビ開いてる時のボタン */
+        .active span:nth-child(1) {
+          top: 16px;
+          left: 6px;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+
+        .active span:nth-child(2),
+        .active span:nth-child(3) {
+          top: 16px;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+
+      nav.globalMenuSp {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        color: #000;
+        background: #fff;
+        text-align: center;
+        transform: translateX(100%);
+        transition: all 0.6s;
+        width: 100%;
+
+        ul {
+          background: #ccc;
+          margin: 0 auto;
+          padding: 0;
+          width: 100%;
+
+          li {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+
+            a {
+              display: block;
+              color: #000;
+              padding: 1em 0;
+              text-decoration: none;
+            }
+          }
+
+          li:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+          }
+
+          li:hover {
+            background: #ddd;
+          }
+        }
+      }
+
+      /* このクラスを、jQueryで付与・削除する */
+      nav.globalMenuSp.active {
+        transform: translateX(0%);
+      }
+
     }
+  }
 
-    .hamburger span {
-      display: block;
-      position: relative;
-      width: 30px;
-      height: 1px;
-      left: 6px;
-      background: #FFFFFF;
-      -webkit-transition: 0.3s ease-in-out;
-      -moz-transition: 0.3s ease-in-out;
-      transition: 0.3s ease-in-out;
-    }
-
-    .hamburger span:nth-child(1) {
-      top: 10px;
-    }
-
-    .hamburger span:nth-child(2) {
-      top: 20px;
-    }
-
-    .hamburger span:nth-child(3) {
-      top: 30px;
-    }
-
-    /* ナビ開いてる時のボタン */
-    .hamburger.active span:nth-child(1) {
-      top: 16px;
-      left: 6px;
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
-
-    .hamburger.active span:nth-child(2),
-    .hamburger.active span:nth-child(3) {
-      top: 16px;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-
-    nav.globalMenuSp {
-      position: fixed;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      color: #000;
-      background: #fff;
-      text-align: center;
-      transform: translateX(100%);
-      transition: all 0.6s;
-      width: 100%;
-    }
-
-    nav.globalMenuSp ul {
-      background: #ccc;
-      margin: 0 auto;
-      padding: 0;
-      width: 100%;
-    }
-
-    nav.globalMenuSp ul li {
-      list-style-type: none;
-      padding: 0;
-      width: 100%;
-      border-bottom: 1px solid #fff;
-    }
-
-    nav.globalMenuSp ul li:last-child {
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    nav.globalMenuSp ul li:hover {
-      background: #ddd;
-    }
-
-    nav.globalMenuSp ul li a {
-      display: block;
-      color: #000;
-      padding: 1em 0;
-      text-decoration: none;
-    }
-
-    /* このクラスを、jQueryで付与・削除する */
-    nav.globalMenuSp.active {
-      transform: translateX(0%);
-    }
-
+// スクロール時にtop-barに付与してヘッダーを固定する
+  .fixed {
+    position: fixed;
+    top: 0;
+    background-color:rgba($color: #CCCCCC, $alpha: 0.9);
+    box-shadow:0 1px 1px 1px rgba($color: #AAAAAA, $alpha: 0.5);
   }
 
   .title {
@@ -188,6 +206,7 @@ main {
   left: 0;
   width: 100%;
   flex: 1;
+
   h1 {
     margin-top: 80px;
     font: bold 36px/55px Poppins;
@@ -363,7 +382,7 @@ main {
             margin: 20px auto auto 40px;
             border-collapse: separate;
             border-spacing: 12px;
-            font-family: Myriad Pro , sans-serif;
+            font-family: Myriad Pro, sans-serif;
 
             th {
               height: auto;
@@ -385,8 +404,8 @@ main {
   }
 
 
-  .contact{
-    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),url("../img/contact_us.png");
+  .contact {
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/contact_us.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -396,8 +415,9 @@ main {
     width: 100%;
     height: 450px;
     text-align: center;
-    .button{
-      position:relative;
+
+    .button {
+      position: relative;
       width: 360px;
       height: 80px;
       margin: 0 auto;
@@ -408,20 +428,22 @@ main {
       display: flex;
       justify-content: center;
       align-items: center;
-      
+
     }
-    .button::before{
+
+    .button::before {
       content: '';
-      position:absolute;
+      position: absolute;
       top: 29px;
       left: 79px;
       width: 30px;
       height: 20px;
       border: 1px solid #707070;
     }
-    .button::after{
+
+    .button::after {
       content: '';
-      position:absolute;
+      position: absolute;
       top: 20px;
       left: 84px;
       width: 20px;
@@ -432,10 +454,11 @@ main {
     }
   }
 }
-  /*--------------------------
+
+/*--------------------------
           footer 
 --------------------------*/
-footer{
+footer {
   position: absolute;
   z-index: 1;
   top: 5140px;
