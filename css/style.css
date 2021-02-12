@@ -42,15 +42,31 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 40px;
+}
+
+header .gray-out {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+
+header .gray-out.active {
+  visibility: visible;
+  opacity: .9;
+  -webkit-transition: all .6s;
+  transition: all .6s;
 }
 
 header .top-bar {
-  position: absolute;
-  top: 40px;
-  left: 0;
   width: 100%;
   height: 64px;
-  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,6 +76,7 @@ header .top-bar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* このクラスを、jQueryで付与・削除する */
 }
 
 header .top-bar .header-top {
@@ -75,24 +92,25 @@ header .top-bar .header-top {
           align-items: center;
   font-size: 36px;
   color: #FFFFFF;
-  /*　ハンバーガーボタン　*/
-  /* このクラスを、jQueryで付与・削除する */
+  /* ハンバーガーボタン */
 }
 
 header .top-bar .header-top .hamburger {
+  display: block;
+  position: relative;
+  z-index: 4;
   width: 42px;
   height: 42px;
   cursor: pointer;
   text-align: center;
-  /* ナビ開いてる時のボタン */
 }
 
 header .top-bar .header-top .hamburger span {
   display: block;
-  position: relative;
+  position: absolute;
   width: 30px;
   height: 1px;
-  left: 6px;
+  right: 0px;
   background: #FFFFFF;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -110,76 +128,92 @@ header .top-bar .header-top .hamburger span:nth-child(3) {
   top: 30px;
 }
 
-header .top-bar .header-top .hamburger .active span:nth-child(1) {
-  top: 16px;
-  left: 6px;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+header .top-bar .header-top .hamburger.active {
+  /* ナビ開いてる時のボタン */
 }
 
-header .top-bar .header-top .hamburger .active span:nth-child(2),
-header .top-bar .header-top .hamburger .active span:nth-child(3) {
-  top: 16px;
+header .top-bar .header-top .hamburger.active span:nth-child(1) {
+  top: 20px;
+  right: 0;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
-header .top-bar .header-top nav.globalMenuSp {
-  position: fixed;
-  z-index: 2;
+header .top-bar .header-top .hamburger.active span:nth-child(2) {
+  top: 20px;
+  right: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+header .top-bar .header-top .hamburger.active span:nth-child(3) {
+  top: 20px;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .top-bar nav.globalMenuSp {
+  position: absolute;
+  z-index: 3;
   top: 0;
   left: 0;
-  color: #000;
   background: #fff;
   text-align: center;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: all 0.6s;
-  transition: all 0.6s;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   width: 100%;
 }
 
-header .top-bar .header-top nav.globalMenuSp ul {
+header .top-bar nav.globalMenuSp ul {
   background: #ccc;
   margin: 0 auto;
   padding: 0;
   width: 100%;
 }
 
-header .top-bar .header-top nav.globalMenuSp ul li {
+header .top-bar nav.globalMenuSp ul li {
   list-style-type: none;
   padding: 0;
   width: 100%;
   border-bottom: 1px solid #fff;
 }
 
-header .top-bar .header-top nav.globalMenuSp ul li a {
+header .top-bar nav.globalMenuSp ul li a {
   display: block;
-  color: #000;
-  padding: 1em 0;
-  text-decoration: none;
+  color: #FFFFFF;
+  padding: 2rem 0;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #A0A0A0;
 }
 
-header .top-bar .header-top nav.globalMenuSp ul li:last-child {
+header .top-bar nav.globalMenuSp ul li:last-child {
   padding-bottom: 0;
   border-bottom: none;
 }
 
-header .top-bar .header-top nav.globalMenuSp ul li:hover {
+header .top-bar nav.globalMenuSp ul li:hover {
   background: #ddd;
 }
 
-header .top-bar .header-top nav.globalMenuSp.active {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+header .top-bar nav.globalMenuSp.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
 
 header .fixed {
   position: fixed;
   top: 0;
+  z-index: 2;
+  left: 0;
   background-color: rgba(204, 204, 204, 0.9);
   -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.5);
           box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.5);
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 header .title {
@@ -250,7 +284,7 @@ main p {
   color: #2B2B2B;
 }
 
-main .concept {
+main #concept {
   position: absolute;
   top: 0;
   left: 0;
@@ -258,18 +292,18 @@ main .concept {
   height: 800px;
 }
 
-main .concept .container {
+main #concept .container {
   margin: 0 auto;
   width: 960px;
   text-align: center;
 }
 
-main .concept .container img {
+main #concept .container img {
   position: relative;
   z-index: 1;
 }
 
-main .concept .band {
+main #concept .band {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -279,7 +313,7 @@ main .concept .band {
   background-color: #EDEDED;
 }
 
-main .work {
+main #work {
   position: absolute;
   top: 800px;
   left: 0;
@@ -287,12 +321,12 @@ main .work {
   text-align: center;
 }
 
-main .work .container {
+main #work .container {
   margin: 0 auto;
   width: 960px;
 }
 
-main .work .container .gallery {
+main #work .container .gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,31 +335,31 @@ main .work .container .gallery {
           justify-content: space-between;
 }
 
-main .work .container .gallery .column-left,
-main .work .container .gallery .column-right {
+main #work .container .gallery .column-left,
+main #work .container .gallery .column-right {
   width: 420px;
 }
 
-main .work .container .gallery .column-left h2,
-main .work .container .gallery .column-right h2 {
+main #work .container .gallery .column-left h2,
+main #work .container .gallery .column-right h2 {
   margin-top: 16px;
   text-align: left;
   font: bold 24px/40px Poppins;
 }
 
-main .work .container .gallery .column-left p,
-main .work .container .gallery .column-right p {
+main #work .container .gallery .column-left p,
+main #work .container .gallery .column-right p {
   margin: 0px 0 80px;
   text-align: left;
   font: 16px/28px Myriad Pro;
   color: #2B2B2B;
 }
 
-main .work .container .gallery .column-right img:first-of-type {
+main #work .container .gallery .column-right img:first-of-type {
   margin-top: 120px;
 }
 
-main .florist {
+main #florist {
   position: absolute;
   top: 2707px;
   left: 0;
@@ -333,7 +367,7 @@ main .florist {
   text-align: center;
 }
 
-main .florist .band {
+main #florist .band {
   position: absolute;
   top: 0;
   left: 0;
@@ -343,14 +377,14 @@ main .florist .band {
   background-color: #EDEDED;
 }
 
-main .florist .container {
+main #florist .container {
   position: relative;
   z-index: 1;
   margin: 0 auto;
   width: 960px;
 }
 
-main .florist .container ul {
+main #florist .container ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,22 +393,22 @@ main .florist .container ul {
           justify-content: space-between;
 }
 
-main .florist .container ul li {
+main #florist .container ul li {
   width: 300px;
   text-align: left;
 }
 
-main .florist .container ul li h2 {
+main #florist .container ul li h2 {
   margin: 12px auto;
   font-size: 24px;
 }
 
-main .florist .container ul li p {
+main #florist .container ul li p {
   margin: 0 auto 40px;
   color: #2B2B2B;
 }
 
-main .shop {
+main #shop {
   position: absolute;
   top: 3358px;
   left: 0;
@@ -382,12 +416,12 @@ main .shop {
   text-align: center;
 }
 
-main .shop .container {
+main #shop .container {
   margin: 0 auto;
   width: 960px;
 }
 
-main .shop .container .shop-wrapper {
+main #shop .container .shop-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -396,12 +430,12 @@ main .shop .container .shop-wrapper {
           justify-content: space-between;
 }
 
-main .shop .container .shop-wrapper .table-wrapper {
+main #shop .container .shop-wrapper .table-wrapper {
   width: 432px;
   height: 320px;
 }
 
-main .shop .container .shop-wrapper .table-wrapper table {
+main #shop .container .shop-wrapper .table-wrapper table {
   line-height: 1.5rem;
   text-align: left;
   margin: 20px auto auto 40px;
@@ -410,18 +444,18 @@ main .shop .container .shop-wrapper .table-wrapper table {
   font-family: Myriad Pro, sans-serif;
 }
 
-main .shop .container .shop-wrapper .table-wrapper table th {
+main #shop .container .shop-wrapper .table-wrapper table th {
   height: auto;
   width: 30%;
   font-weight: normal;
   border-right: 2px solid #A0A0A0;
 }
 
-main .shop .container .shop-wrapper .table-wrapper table td {
+main #shop .container .shop-wrapper .table-wrapper table td {
   padding-bottom: 16px;
 }
 
-main .contact {
+main #contact {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url("../img/contact_us.png");
   background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/contact_us.png");
   background-repeat: no-repeat;
@@ -435,7 +469,7 @@ main .contact {
   text-align: center;
 }
 
-main .contact .button {
+main #contact .button {
   position: relative;
   width: 360px;
   height: 80px;
@@ -455,7 +489,7 @@ main .contact .button {
           align-items: center;
 }
 
-main .contact .button::before {
+main #contact .button::before {
   content: '';
   position: absolute;
   top: 29px;
@@ -465,7 +499,7 @@ main .contact .button::before {
   border: 1px solid #707070;
 }
 
-main .contact .button::after {
+main #contact .button::after {
   content: '';
   position: absolute;
   top: 20px;

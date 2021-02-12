@@ -4,8 +4,32 @@ $(function() {
 
       if ($(this).hasClass('active')) {
           $('.globalMenuSp').addClass('active');
+          $('.gray-out').addClass('active');
       } else {
           $('.globalMenuSp').removeClass('active');
+          $('.gray-out').removeClass('active');
+      }
+  });
+  $('.gray-out').click(function() {
+      $(this).toggleClass('active');
+
+      if ($(this).hasClass('active')) {
+          $('.globalMenuSp').addClass('active');
+          $('.hamburger').addClass('active');
+      } else {
+          $('.globalMenuSp').removeClass('active');
+          $('.hamburger').removeClass('active');
+      }
+  });
+  $('.globalMenuSp').click(function() {
+      $(this).toggleClass('active');
+
+      if ($(this).hasClass('active')) {
+          $('.gray-out').addClass('active');
+          $('.hamburger').addClass('active');
+      } else {
+          $('.gray-out').removeClass('active');
+          $('.hamburger').removeClass('active');
       }
   });
 });
