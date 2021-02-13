@@ -31,15 +31,12 @@ ul {
           header  
 --------------------------*/
 header {
-  margin: 0;
   height: 620px;
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url("../img/header.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  display: flex;
-  justify-content: center;
   padding-top: 40px;
 
    // 背景をグレーアウト（メニュー表示時に使用）
@@ -197,16 +194,16 @@ header {
   }
 
   .title {
-    position: absolute;
-    top: 240px;
+    text-align: center;
+    margin: 136px auto 0 auto;
     height: 120px;
     font: 100px/100px Myriad Pro;
     color: #FFFFFF;
   }
 
   .sub-title {
-    position: absolute;
-    top: 360px;
+    text-align: center;
+    margin: 0 auto;
     height: 16px;
     font: 16px/16px Hiragino Kaku Gothic ProN;
     color: #FFFFFF;
@@ -214,36 +211,26 @@ header {
     &::before {
       content: "-";
       color: #FFFFFF;
-
     }
 
     &::after {
       content: "-";
       color: #FFFFFF;
-
     }
   }
 }
 
 main {
-  position: absolute;
-  top: 620px;
-  left: 0;
-  width: 100%;
-  flex: 1;
-
   h1 {
-    margin-top: 80px;
+    padding-top: 80px;
     font: bold 36px/55px Poppins;
   }
-
   .partition {
     display: inline-block;
     height: 24px;
     width: 40px;
     border-bottom: 1px solid #707070;
   }
-
   p {
     margin: 32px auto 40px;
     width: 100%;
@@ -256,11 +243,9 @@ main {
           Concept  
 --------------------------*/
   #concept {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 800px;
+    position: relative;
 
     .container {
       margin: 0 auto;
@@ -289,9 +274,6 @@ main {
           Work  
 --------------------------*/
   #work {
-    position: absolute;
-    top: 800px;
-    left: 0;
     width: 100%;
     text-align: center;
 
@@ -326,17 +308,15 @@ main {
         }
       }
     }
-  }
+}
 
   /*--------------------------
           Florist  
 --------------------------*/
   #florist {
-    position: absolute;
-    top: 2707px;
-    left: 0;
     width: 100%;
     text-align: center;
+    position: relative;
 
     .band {
       position: absolute;
@@ -377,17 +357,15 @@ main {
       }
 
     }
-  }
+}
 
   /*--------------------------
           Shop Information  
 --------------------------*/
   #shop {
-    position: absolute;
-    top: 3358px;
-    left: 0;
     width: 100%;
     text-align: center;
+    padding-bottom: 120px;
 
     .container {
       margin: 0 auto;
@@ -414,13 +392,10 @@ main {
               width: 30%;
               font-weight: normal;
               border-right: 2px solid #A0A0A0;
-
             }
 
             td {
               padding-bottom: 16px;
-
-              // margin: 0 auto 16px 16px;
             }
           }
         }
@@ -428,15 +403,11 @@ main {
     }
   }
 
-
   #contact {
     background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/contact_us.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    position: absolute;
-    top: 4044px;
-    left: 0;
     width: 100%;
     height: 450px;
     text-align: center;
@@ -484,12 +455,11 @@ main {
           footer 
 --------------------------*/
 footer {
-  position: absolute;
-  z-index: 1;
-  top: 5140px;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  text-align: center;
-  color: #2B2B2B;
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: #2B2B2B;
+  }
 }

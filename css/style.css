@@ -28,7 +28,6 @@ ul {
           header  
 --------------------------*/
 header {
-  margin: 0;
   height: 620px;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("../img/header.png");
@@ -36,12 +35,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding-top: 40px;
 }
 
@@ -217,16 +210,16 @@ header .fixed {
 }
 
 header .title {
-  position: absolute;
-  top: 240px;
+  text-align: center;
+  margin: 136px auto 0 auto;
   height: 120px;
   font: 100px/100px Myriad Pro;
   color: #FFFFFF;
 }
 
 header .sub-title {
-  position: absolute;
-  top: 360px;
+  text-align: center;
+  margin: 0 auto;
   height: 16px;
   font: 16px/16px Hiragino Kaku Gothic ProN;
   color: #FFFFFF;
@@ -243,13 +236,6 @@ header .sub-title::after {
 }
 
 main {
-  position: absolute;
-  top: 620px;
-  left: 0;
-  width: 100%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   /*--------------------------
           Concept  
 --------------------------*/
@@ -265,7 +251,7 @@ main {
 }
 
 main h1 {
-  margin-top: 80px;
+  padding-top: 80px;
   font: bold 36px/55px Poppins;
 }
 
@@ -285,11 +271,9 @@ main p {
 }
 
 main #concept {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 800px;
+  position: relative;
 }
 
 main #concept .container {
@@ -314,9 +298,6 @@ main #concept .band {
 }
 
 main #work {
-  position: absolute;
-  top: 800px;
-  left: 0;
   width: 100%;
   text-align: center;
 }
@@ -360,11 +341,9 @@ main #work .container .gallery .column-right img:first-of-type {
 }
 
 main #florist {
-  position: absolute;
-  top: 2707px;
-  left: 0;
   width: 100%;
   text-align: center;
+  position: relative;
 }
 
 main #florist .band {
@@ -409,11 +388,9 @@ main #florist .container ul li p {
 }
 
 main #shop {
-  position: absolute;
-  top: 3358px;
-  left: 0;
   width: 100%;
   text-align: center;
+  padding-bottom: 120px;
 }
 
 main #shop .container {
@@ -461,9 +438,6 @@ main #contact {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  position: absolute;
-  top: 4044px;
-  left: 0;
   width: 100%;
   height: 450px;
   text-align: center;
@@ -515,14 +489,17 @@ main #contact .button::after {
 /*--------------------------
           footer 
 --------------------------*/
-footer {
-  position: absolute;
-  z-index: 1;
-  top: 5140px;
-  left: 0;
-  width: 100%;
+footer p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 40px;
-  text-align: center;
   color: #2B2B2B;
 }
 /*# sourceMappingURL=style.css.map */
