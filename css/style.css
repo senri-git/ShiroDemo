@@ -15,6 +15,10 @@ body {
   font-size: 16px;
 }
 
+body .block {
+  display: inline-block;
+}
+
 a {
   text-decoration: none;
   color: #333;
@@ -84,8 +88,11 @@ header .top-bar .header-top {
       -ms-flex-align: center;
           align-items: center;
   font-size: 36px;
-  color: #FFFFFF;
   /* ハンバーガーボタン */
+}
+
+header .top-bar .header-top .logo {
+  color: #FFFFFF;
 }
 
 header .top-bar .header-top .hamburger {
