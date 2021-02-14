@@ -16,6 +16,10 @@ body {
     Hiragino Kaku Gothic Pro, Meiryo UI, "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
     MS PGothic, sans-serif;
   font-size: 16px;
+  // 途中で改行されたくないブロック
+  .block{
+    display: inline-block;
+  }
 }
 
 a {
@@ -72,8 +76,10 @@ header {
       justify-content: space-between;
       align-items: center;
       font-size: 36px;
-      color: #FFFFFF;
-
+      // color: #FFFFFF;
+      .logo{
+        color: #FFFFFF;
+      }
       /* ハンバーガーボタン */
       .hamburger {
         display: block;
