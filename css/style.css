@@ -484,6 +484,14 @@ main p {
           align-items: center;
 }
 
+#contact .button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
 #contact .button::before {
   content: '';
   position: absolute;
@@ -505,6 +513,12 @@ main p {
   border-right: 1px solid #707070;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+#contact .button:hover::before, #contact .button:hover::after {
+  border-color: #FFFFFF;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
 }
 
 /*--------------------------
@@ -564,6 +578,7 @@ footer p {
   }
   main #work {
     text-align: center;
+    /* 横スクロールの指定 */
   }
   main #work .container .gallery {
     display: -webkit-box;
@@ -572,7 +587,6 @@ footer p {
     margin: 0 auto;
     padding: 0;
     overflow-x: auto;
-    /* 横スクロールの指定 */
   }
   main #work .container .gallery .column-left,
   main #work .container .gallery .column-right {
@@ -582,7 +596,7 @@ footer p {
   }
   main #work .container .gallery .wedding,
   main #work .container .gallery .decoration,
-  main #work .container .gallery .for_yourself {
+  main #work .container .gallery .for__yourself {
     margin-left: 20px;
   }
   main #work .container .gallery .works {
@@ -607,7 +621,18 @@ footer p {
     overflow-x: auto;
   }
   main #florist ul li {
+    width: 256px;
     margin-right: 20px;
+  }
+  main #florist ul li img {
+    width: 256px;
+    height: 256px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main #florist ul li p {
+    width: 256px;
+    margin-bottom: 0;
   }
   main #shop {
     padding-bottom: 60px;

@@ -42,3 +42,10 @@ $( window ).on( 'scroll', function() {
       $( '.top-bar' ).removeClass( 'fixed' );
     }
   });
+
+// 横スクロールヒント
+  window.addEventListener('DOMContentLoaded', function(){
+    new ScrollHint('.gallery');
+    new ScrollHint('.florists');
+
+  });
