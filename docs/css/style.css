@@ -1,0 +1,678 @@
+@charset "UTF-8";
+/*--------------------------
+          共通  
+--------------------------*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font-family: Poppins, Myriad Pro, Dosis, Helvetica Neue, Helvetica, Arial, Verdana, Roboto, "游ゴシック", Yu Gothic, "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, Meiryo UI, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", MS PGothic, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+/*--------------------------
+          header  
+--------------------------*/
+header {
+  height: 620px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("../img/header.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding-top: 40px;
+}
+
+header .gray-out {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+
+header .gray-out.active {
+  visibility: visible;
+  opacity: .9;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+
+header .top-bar {
+  width: 100%;
+  height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* このクラスを、jQueryで付与・削除する */
+}
+
+header .top-bar .header-top {
+  width: 960px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 36px;
+  color: #FFFFFF;
+  /* ハンバーガーボタン */
+}
+
+header .top-bar .header-top .hamburger {
+  display: block;
+  position: relative;
+  z-index: 4;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+
+header .top-bar .header-top .hamburger span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 1px;
+  right: 0px;
+  background-color: #FFFFFF;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+header .top-bar .header-top .hamburger span:nth-child(1) {
+  top: 10px;
+}
+
+header .top-bar .header-top .hamburger span:nth-child(2) {
+  top: 20px;
+}
+
+header .top-bar .header-top .hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+header .top-bar .header-top .hamburger.active {
+  /* ナビ開いてる時のボタン */
+}
+
+header .top-bar .header-top .hamburger.active span:nth-child(1) {
+  top: 20px;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .top-bar .header-top .hamburger.active span:nth-child(2) {
+  top: 20px;
+  right: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+header .top-bar .header-top .hamburger.active span:nth-child(3) {
+  top: 20px;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .top-bar nav.globalMenuSp {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background: #fff;
+  text-align: center;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+header .top-bar nav.globalMenuSp ul {
+  background: #ccc;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+header .top-bar nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+
+header .top-bar nav.globalMenuSp ul li a {
+  display: block;
+  color: #FFFFFF;
+  padding: 2rem 0;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #A0A0A0;
+}
+
+header .top-bar nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+header .top-bar nav.globalMenuSp ul li:hover {
+  background: #ddd;
+}
+
+header .top-bar nav.globalMenuSp.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+header .fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.3);
+          box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.3);
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+}
+
+header .fixed .header-top .logo {
+  color: #2B2B2B;
+}
+
+header .fixed .header-top .hamburger span {
+  background-color: #2B2B2B;
+}
+
+header .titles {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .titles .title {
+  text-align: center;
+  height: 120px;
+  font-size: 100px;
+  line-height: 100px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+
+header .titles .sub-title {
+  text-align: center;
+  margin: 0 auto;
+  height: 16px;
+  font: 16px/16px Hiragino Kaku Gothic ProN;
+  color: #FFFFFF;
+}
+
+header .titles .sub-title::before {
+  content: "-";
+  color: #FFFFFF;
+}
+
+header .titles .sub-title::after {
+  content: "-";
+  color: #FFFFFF;
+}
+
+main h1 {
+  padding-top: 80px;
+  font: bold 36px/55px Poppins;
+}
+
+main .partition {
+  display: inline-block;
+  height: 24px;
+  width: 40px;
+  border-bottom: 1px solid #707070;
+}
+
+main p {
+  margin: 32px auto 40px;
+  width: 100%;
+  font: 16px/26px Myriad Pro;
+  letter-spacing: 0px;
+  color: #2B2B2B;
+}
+
+/*--------------------------
+          Concept  
+--------------------------*/
+#concept {
+  width: 100%;
+  position: relative;
+}
+
+#concept .container {
+  margin: 0 auto;
+  width: 960px;
+  text-align: center;
+  padding-bottom: 102px;
+}
+
+#concept .container img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+#concept .band {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 240px;
+  width: 100%;
+  background-color: #EDEDED;
+}
+
+/*--------------------------
+          Work  
+--------------------------*/
+@media screen and (min-width: 980px) {
+  #work {
+    width: 100%;
+    text-align: center;
+  }
+  #work .container {
+    margin: 0 auto;
+    width: 960px;
+  }
+  #work .container .gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #work .container .gallery .column-left,
+  #work .container .gallery .column-right {
+    width: 420px;
+  }
+  #work .container .gallery .column-right {
+    padding-top: 120px;
+  }
+}
+
+#work .gallery h2 {
+  margin-top: 16px;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+
+#work .gallery p {
+  margin: 0px 0 80px;
+  text-align: left;
+  font: 16px/28px Myriad Pro;
+  color: #2B2B2B;
+}
+
+/*--------------------------
+          Florist  
+--------------------------*/
+#florist {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+#florist .band {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 374px;
+  width: 100%;
+  background-color: #EDEDED;
+}
+
+#florist .container {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  width: 960px;
+}
+
+#florist .container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#florist .container ul li {
+  width: 300px;
+  text-align: left;
+}
+
+#florist .container ul li h2 {
+  margin: 12px auto;
+  font-size: 24px;
+}
+
+#florist .container ul li p {
+  margin: 0 auto 40px;
+  color: #2B2B2B;
+}
+
+/*--------------------------
+       Shop Information  
+--------------------------*/
+#shop {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 120px;
+}
+
+#shop .container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+#shop .container .shop-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#shop .container .shop-wrapper .table-wrapper {
+  width: 432px;
+  height: 320px;
+}
+
+#shop .container .shop-wrapper .table-wrapper table {
+  line-height: 1.5rem;
+  text-align: left;
+  margin: 20px auto auto 40px;
+  border-collapse: separate;
+  border-spacing: 12px;
+  font-family: Myriad Pro, sans-serif;
+}
+
+#shop .container .shop-wrapper .table-wrapper table th {
+  height: auto;
+  width: 30%;
+  font-weight: normal;
+  border-right: 2px solid #A0A0A0;
+}
+
+#shop .container .shop-wrapper .table-wrapper table td {
+  padding-bottom: 16px;
+}
+
+/*--------------------------
+       Contact  
+--------------------------*/
+#contact {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url("../img/contact_us.png");
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/contact_us.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 450px;
+  text-align: center;
+}
+
+#contact .button {
+  position: relative;
+  width: 360px;
+  height: 80px;
+  margin: 0 auto;
+  padding-left: 30px;
+  background-color: #FFFFFF;
+  border: 1px solid #A0A0A0;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact .button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#contact .button::before {
+  content: '';
+  position: absolute;
+  top: 29px;
+  left: 79px;
+  width: 30px;
+  height: 20px;
+  border: 1px solid #707070;
+}
+
+#contact .button::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 84px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid #707070;
+  border-right: 1px solid #707070;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#contact .button:hover::before, #contact .button:hover::after {
+  border-color: #FFFFFF;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+/*--------------------------
+          footer 
+--------------------------*/
+footer p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  color: #2B2B2B;
+}
+
+/*--------------------------
+      画面幅 980px未満
+--------------------------*/
+@media screen and (max-width: 979px) {
+  body {
+    font-size: 14px;
+  }
+  header .top-bar {
+    height: 3rem;
+  }
+  header .top-bar .header-top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  header .top-bar .header-top .logo {
+    font-size: 1.5rem;
+  }
+  header .title {
+    font-size: 5rem;
+  }
+  main h1 {
+    font-size: 32px;
+  }
+  main #concept .container,
+  main #work .container,
+  main #florist .container,
+  main #shop .container,
+  main #contact .container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  main #concept .container {
+    padding-bottom: 10vw;
+  }
+  main #concept .band {
+    height: 40vw;
+  }
+  main #work {
+    text-align: center;
+    /* 横スクロールの指定 */
+  }
+  main #work .container .gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: auto;
+  }
+  main #work .container .gallery .column-left,
+  main #work .container .gallery .column-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  main #work .container .gallery .wedding,
+  main #work .container .gallery .decoration,
+  main #work .container .gallery .for__yourself {
+    margin-left: 20px;
+  }
+  main #work .container .gallery .works {
+    width: 256px;
+    height: 512px;
+    text-align: left;
+  }
+  main #work .container .gallery .works img {
+    width: 256px;
+    height: 256px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main #work .container .gallery .works p {
+    width: 256px;
+    margin-bottom: 0;
+  }
+  main #florist ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+  }
+  main #florist ul li {
+    width: 256px;
+    margin-right: 20px;
+  }
+  main #florist ul li img {
+    width: 256px;
+    height: 256px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main #florist ul li p {
+    width: 256px;
+    margin-bottom: 0;
+  }
+  main #shop {
+    padding-bottom: 60px;
+  }
+  main #shop .container .shop-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main #shop .container .shop-wrapper img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main #shop .container .shop-wrapper .table-wrapper {
+    width: 100%;
+  }
+  main #shop .container .shop-wrapper .table-wrapper table {
+    margin: 20px auto;
+  }
+  main #contact .button {
+    padding-left: 0;
+    padding-bottom: 28px;
+    width: 202px;
+    height: 90px;
+  }
+  main #contact .button::before {
+    top: 53px;
+    left: 86px;
+  }
+  main #contact .button::after {
+    top: 44px;
+    left: 91px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
